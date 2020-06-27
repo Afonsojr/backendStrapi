@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "managers",
+  "info": {
+    "name": "manager"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "password": {
+      "type": "password",
+      "required": true,
+      "private": true
+    },
+    "status": {
+      "type": "boolean",
+      "default": true
+    },
+    "birthday": {
+      "type": "date"
+    },
+    "avatar": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}
